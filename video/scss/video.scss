@@ -1,0 +1,63 @@
+.video {
+    position: relative;
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.video-btn {
+    @include reset-button;
+
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    height: 80px;
+    color: var(--btn-text);
+    font-size: 14px;
+
+    @include hover {
+        &::before {
+            transform: scale(1.03);
+        }
+    }
+
+    @include desktop {
+        min-width: 120px;
+        height: 120px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        overflow: hidden;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        border-radius: 999px;
+        transition: transform 0.3s ease;
+    }
+
+    .icon + span,
+    span + .icon {
+        margin-top: 10px;
+    }
+
+    &--big {
+        min-width: 120px;
+        height: 120px;
+
+        @include desktop {
+            min-width: 134px;
+            height: 134px;
+        }
+    }
+}

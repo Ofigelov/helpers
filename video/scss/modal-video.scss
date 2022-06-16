@@ -1,0 +1,15 @@
+.modal-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: var(--viewport-height);
+    pointer-events: initial;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        max-width: 968px;
+        margin: 0 auto;
+    }
+}
