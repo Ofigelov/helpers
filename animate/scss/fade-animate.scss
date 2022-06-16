@@ -1,0 +1,8 @@
+.fade-animate {
+    opacity: 0;
+    transition: opacity 0.8s linear;
+
+    &.is-active-animation {
+        opacity: 1;
+    }
+}

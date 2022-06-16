@@ -1,0 +1,38 @@
+.title-animate {
+    $this: &;
+    //Coolvetica font is a little bit broken, part of symbols goes out of container with overflow, so I tried to compentsate it with transform hack
+    $compensate-gap: 6px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &__word-wrapper {
+        overflow: hidden;
+        display: inline-flex;
+        transform: translateY($compensate-gap);
+    }
+
+    &__word {
+        transform: translateY(100%);
+        white-space: pre;
+
+        #{$this}.fade-out &,
+        #{$this}.is-active-animation & {
+            transition: transform 1s $motion-easing;
+        }
+
+        #{$this}.fade-out & {
+            transform: translateY(-100%) translateY(-$compensate-gap);
+        }
+
+        #{$this}.is-active-animation & {
+            transform: translateY(-$compensate-gap);
+        }
+    }
+
+    &.fade-out,
+    &.is-active-animation {
+        opacity: 1;
+        visibility: visible;
+    }
+}

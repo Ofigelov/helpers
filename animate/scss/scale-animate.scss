@@ -1,0 +1,23 @@
+.scale-animate {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s $motion-easing;
+
+    &--to-left {
+        transform-origin: right;
+    }
+
+    &--to-top {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    &--to-bottom {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    &.is-active-animation {
+        transform: none;
+    }
+}

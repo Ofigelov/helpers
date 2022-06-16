@@ -1,0 +1,13 @@
+.clip-animate {
+    //opacity needs for preventing background artifacts in during of animation
+    opacity: 0.99;
+    clip: rect(0, 0, 0, 0);
+    animation-direction: normal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+    animation-timing-function: $motion-easing;
+
+    &.is-finished-animation {
+        clip: initial;
+    }
+}
