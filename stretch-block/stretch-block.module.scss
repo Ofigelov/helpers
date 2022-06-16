@@ -1,0 +1,11 @@
+.wrap {
+    overflow: hidden;
+    visibility: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+
+    &:global(.is-active) {
+        visibility: visible;
+        max-height: initial;
+    }
+}
